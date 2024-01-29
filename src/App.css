@@ -1,0 +1,51 @@
+body {
+  cursor: url('../public/outline-cursor.cur'),auto;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: auto;
+  background-color: #F4F1E1;
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-icons {
+  cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: 250ms;
+  -webkit-text-decoration-color: transparent;
+  -moz-text-decoration-color: transparent;
+}
+
+.header-icons:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+  -webkit-text-decoration-color: black;
+  -moz-text-decoration-color: black;
+}
+
+@media (max-width: 600px) {
+  .header-icons {
+    padding: 5%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .header-icons {
+    padding: 4%;
+  }
+}
+
+@media (min-width: 901px) {
+  .header-icons {
+    padding: 3%;
+  }
+}
