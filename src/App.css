@@ -10,10 +10,43 @@ body {
   background-color: #F4F1E1;
 }
 
-.landing-header {
+.landing-header, .main-block, .social-links {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  font-size: 2.5vw;
+}
+
+.main-block {
+  height: 100%;
+}
+
+.content, .profile-photo {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: space-around;
+}
+
+.name {
+  font-size: 5vw;
+}
+
+.title {
+  font-size: 3vw;
+}
+
+.name, .title {
+  text-wrap: wrap;
+}
+
+.link-icons {
+  margin: 3% 3% 3% 0;
+  width: 10%;
+}
+
+.link-icons:hover {
+  cursor: url('../public/hand\ cursor\ 2.cur'), auto;
 }
 
 .header-icons {
@@ -36,16 +69,25 @@ body {
   .header-icons {
     padding: 5%;
   }
+  .content, .profile-photo {
+    margin: 4%;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
   .header-icons {
     padding: 4%;
   }
+  .content, .profile-photo {
+    margin: 3%;
+  }
 }
 
 @media (min-width: 901px) {
   .header-icons {
     padding: 3%;
+  }
+  .content, .profile-photo {
+    margin: 2.5%;
   }
 }
