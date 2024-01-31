@@ -1,16 +1,24 @@
 body {
   cursor: url('../public/outline-cursor.cur'),auto;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 200;
+}
+
+.name, .title {
+  font-weight: 200;
+  margin: 0;
 }
 
 .App {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
   width: auto;
   background-color: #F4F1E1;
 }
 
-.landing-header, .main-block, .social-links {
+.landing-header, .social-links {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -18,22 +26,33 @@ body {
 }
 
 .main-block {
-  height: 100%;
+  display: flex;
+  height: 70%;
+  width: 90%;
 }
 
 .content, .profile-photo {
   display: flex;
   flex-direction: column;
-  width: 40%;
   justify-content: space-around;
 }
 
-.name {
-  font-size: 5vw;
+.content {
+  width: 30%;
 }
 
-.title {
-  font-size: 3vw;
+.profile-photo {
+  width: 50%;
+}
+
+.profile-photo-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
+  border-radius: 50%;
 }
 
 .name, .title {
@@ -69,25 +88,91 @@ body {
   .header-icons {
     padding: 5%;
   }
+  .main-block {
+    justify-content: center;
+    text-align: center;
+    height: 85%;
+  }
   .content, .profile-photo {
     margin: 4%;
   }
+  .profile-photo {
+    width: 80%;
+  }
+  .profile-photo-block {
+    display: none;
+  }
+  .profile-photo-block-mobile {
+    display: flex;
+    justify-content: center;
+  }
+  .content {
+    width: 85%;
+  }
+  .name {
+    font-size: 50px;
+  }
+  .title {
+    font-size: 30px;
+  }
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 1100px) {
   .header-icons {
     padding: 4%;
   }
   .content, .profile-photo {
     margin: 3%;
   }
+  .main-block {
+    justify-content: center;
+    text-align: center;
+    height: 85%;
+  }
+
+  .profile-photo {
+    width: 80%;
+  }
+
+  .profile-photo-block {
+    display: none;
+  }
+
+  .profile-photo-block-mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    width: 85%;
+  }
+
+  .name {
+    font-size: 60px;
+  }
+  .title {
+    font-size: 40px;
+  }
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1101px) {
   .header-icons {
     padding: 3%;
   }
   .content, .profile-photo {
     margin: 2.5%;
+  }
+  .profile-photo-block {
+    display: flex;
+  }
+
+  .profile-photo-block-mobile {
+    display: none;
+  }
+  .name {
+    font-size: 80px;
+  }
+  .title {
+    font-size: 50px;
   }
 }
