@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./Header";
 import github from '../github.png';
 import linkedin from '../linkedin.png';
 import email from '../email.png';
@@ -7,11 +8,7 @@ import profile from '../profile2.jpg';
 const Homepage: React.FC = () => {
     return (
         <>
-        <header className="landing-header">
-            <div className="header-icons">Home</div>
-            <div className="header-icons">Projects</div>
-            <div className="header-icons">About</div>
-        </header>
+        <Header />
         <div className="main-block">
             <div className="content">
             <p className='name'>SIDDHARTH SINGH</p>
