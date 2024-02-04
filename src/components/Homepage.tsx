@@ -6,11 +6,11 @@ import email from '../email.png';
 import profile from '../profile2.jpg';
 
 interface HomepageProps {
-    changeMainPage: (param: String) => void;
+    changeMainPage: (param: string) => void;
 }
 
 const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
-    const onNavbarClick = (param: String) => changeMainPage(param);
+    const onNavbarClick = (param: string) => changeMainPage(param);
     return (
         <>
         <Header onNavbarClick={onNavbarClick}/>
