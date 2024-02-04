@@ -1,10 +1,14 @@
 import React from "react";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    onNavbarClick: (param: String) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({onNavbarClick}) => {
     return (
         <header className="landing-header">
             <div className="header-icons">Home</div>
-            <div className="header-icons">Projects</div>
+            <div className="header-icons" onClick={() => onNavbarClick("projects")}>Projects</div>
             <div className="header-icons">About</div>
         </header>
     )

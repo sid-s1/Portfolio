@@ -5,10 +5,15 @@ import linkedin from '../linkedin.png';
 import email from '../email.png';
 import profile from '../profile2.jpg';
 
-const Homepage: React.FC = () => {
+interface HomepageProps {
+    changeMainPage: (param: String) => void;
+}
+
+const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
+    const onNavbarClick = (param: String) => changeMainPage(param);
     return (
         <>
-        <Header />
+        <Header onNavbarClick={onNavbarClick}/>
         <div className="main-block">
             <div className="content">
             <p className='name'>SIDDHARTH SINGH</p>
