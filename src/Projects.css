@@ -1,0 +1,23 @@
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 70%;
+    min-width: 320px;
+    justify-content: center;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid grey;
+    width: 30%;
+    min-width: 300px;
+}
+
+.project-images {
+    width: 30%;
+    height: auto;
+}
