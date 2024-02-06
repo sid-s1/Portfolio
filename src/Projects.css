@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    height: 70%;
+    max-height: 70%;
     min-width: 320px;
     justify-content: center;
 }
@@ -10,14 +10,16 @@
 .project-card {
     display: flex;
     flex-direction: column;
+    flex: 1;
     align-items: center;
     text-align: center;
     border: 2px solid grey;
     width: 30%;
     min-width: 300px;
+    margin: 3vw;
 }
 
 .project-images {
-    width: 30%;
+    width: 80%;
     height: auto;
 }
