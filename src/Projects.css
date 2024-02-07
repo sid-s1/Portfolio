@@ -19,9 +19,19 @@
     margin: 3vw;
     border-radius: 10px;
     box-shadow: 2px 5px 5px 0px gray;
+    transition: 0.3s all ease;
+}
+
+.project-card:hover {
+    cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+    background-color: rgb(7, 189, 239);
 }
 
 .project-images {
     width: 80%;
     height: auto;
+}
+
+.project-descriptions, .tech-used {
+    margin: 1vw;
 }

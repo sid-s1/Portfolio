@@ -19,8 +19,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
                 <>
                     <h1 className="project-names">{project.name}</h1>
                     <img src={project.image} className="project-images"/>
-                    <p className="project-descriptions">{project.desc}</p>
-                    <p className="tech-used">
+                    <p className="project-descriptions"><strong><em>Description: </em></strong>{project.desc}</p>
+                    <p className="tech-used"> <strong><em>Tech: </em></strong>
                         {
                             project.tech.map((tech,index) => index < project.tech.length - 1 ? `${tech} + ` : `${tech}`)
                         }
