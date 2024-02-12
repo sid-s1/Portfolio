@@ -1,5 +1,5 @@
 body {
-  cursor: url('../public/outline-cursor.cur'),auto;
+  cursor: url('../public/LKad-12_arrow.cur'),auto;
   font-family: 'Barlow', sans-serif;
   font-weight: 200;
 }
@@ -17,7 +17,8 @@ body {
   min-height: 900px;
   width: auto;
   min-width: 320px;
-  background-color: #F4F1E1;
+  background-color: black;
+  color: white;
   overflow: scroll;
 }
 
@@ -36,11 +37,12 @@ body {
 .content, .profile-photo {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .content {
   width: 80%;
+  height: 90%;
 }
 
 .profile-photo {
@@ -53,6 +55,28 @@ body {
   align-items: center;
 }
 
+.contact-me {
+  margin: 5vh 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0;
+  list-style: none;
+}
+
+.contact-me li {
+  position: relative;
+  padding: 10px;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.contact-me li::before,
+.contact-me li::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+}
+
 .profile-photo {
   border-radius: 50%;
 }
@@ -62,13 +86,15 @@ body {
 }
 
 .link-icons {
-  margin: 2% 2% 2% 0;
-  width: 10%;
-  max-width: 75px;
+  padding: 7px;
+  width: 7.5vw;
+  max-width: 50px;
+  border-radius: 50%;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.link-icons:hover {
-  cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+.github {
+  margin-left: 0;
 }
 
 .header-icons {
@@ -80,18 +106,12 @@ body {
   -moz-text-decoration-color: transparent;
 }
 
-.header-icons:hover {
-  text-decoration: underline;
-  text-decoration-color: black;
-  -webkit-text-decoration-color: black;
-  -moz-text-decoration-color: black;
-}
-
 @media (max-width: 600px) {
   .header-icons {
     padding: 5%;
   }
-  .landing-header {
+  .landing-header,
+  .contact-me {
     font-size: 15px;
   }
   .main-block {
@@ -110,7 +130,8 @@ body {
   }
   .profile-photo-block-mobile {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   .content {
     width: 85%;
@@ -127,7 +148,8 @@ body {
   .header-icons {
     padding: 4%;
   }
-  .landing-header {
+  .landing-header,
+  .contact-me {
     font-size: 20px;
   }
   .content, .profile-photo {
@@ -149,7 +171,8 @@ body {
 
   .profile-photo-block-mobile {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .content {
@@ -168,7 +191,13 @@ body {
   .header-icons {
     padding: 3%;
   }
-  .landing-header {
+  .header-icons:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    -webkit-text-decoration-color: white;
+    -moz-text-decoration-color: white;
+  }
+  .landing-header, .contact-me {
     font-size: 25px;
   }
   .content, .profile-photo {
@@ -176,7 +205,9 @@ body {
   }
   .profile-photo-block {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .profile-photo-block-mobile {
@@ -188,4 +219,53 @@ body {
   .title {
     font-size: 50px;
   }
+
+  /* Socials icons animations start */
+  .link-icons:hover {
+    transform: scale(1.2);
+    border: 1px solid #fff;
+    cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+  }
+  /* Social icons animations end */
+  
+  /* contact me animations start */
+  .contact-me li::before,
+  .contact-me li::after {
+    border: 0px solid transparent;
+    width: 0%;
+    height: 0%;
+    bottom: 0%;
+    right: 0%;
+  }
+
+  .contact-me li::before {
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+  }
+
+  .contact-me li::after {
+    border-top-width: 1px;
+    border-right-width: 1px;
+  }
+
+  .contact-me li:hover {
+    cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+  }
+
+  .contact-me li:hover::before,
+  .contact-me li:hover::after {
+    border-color: #fff;
+    transition: border-color 0s, width 0.3s, height 0.3s;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-me li:hover::before {
+    transition-delay: 0s, 0s, 0.3s;
+  }
+
+  .contact-me li:hover::after {
+    transition-delay: 0s, 0.3s, 0s;
+  }
+  /* contact me animation ends */
 }
