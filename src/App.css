@@ -1,7 +1,9 @@
 body {
-  cursor: url('../public/outline-cursor.cur'),auto;
+  /* cursor: url('../public/outline-cursor.cur'),auto; */
+  cursor: url('../public/LKad-12_arrow.cur'),auto;
   font-family: 'Barlow', sans-serif;
   font-weight: 200;
+  caret-color: white;
 }
 
 .name, .title {
@@ -17,7 +19,9 @@ body {
   min-height: 900px;
   width: auto;
   min-width: 320px;
-  background-color: #F4F1E1;
+  /* background-color: #F4F1E1; */
+  background-color: black;
+  color: white;
   overflow: scroll;
 }
 
@@ -82,9 +86,9 @@ body {
 
 .header-icons:hover {
   text-decoration: underline;
-  text-decoration-color: black;
-  -webkit-text-decoration-color: black;
-  -moz-text-decoration-color: black;
+  text-decoration-color: white;
+  -webkit-text-decoration-color: white;
+  -moz-text-decoration-color: white;
 }
 
 @media (max-width: 600px) {

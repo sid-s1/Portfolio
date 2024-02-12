@@ -20,11 +20,12 @@
     border-radius: 10px;
     box-shadow: 2px 5px 5px 0px gray;
     transition: 0.3s all ease;
+    background-color: rgb(1, 1, 50);
 }
 
 .project-card:hover {
     cursor: url('../public/hand\ cursor\ 2.cur'), auto;
-    background-color: rgb(7, 189, 239);
+    background-color: rgba(0, 0, 255, 0.095);
 }
 
 .project-images {
