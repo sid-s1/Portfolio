@@ -1,11 +1,8 @@
 import React from "react";
 import Header from "./Header";
-// import github from '../github.png';
-// import linkedin from '../linkedin.png';
-import github from '../github final.jpg';
-import linkedin from '../linkedin.svg';
-import email from '../email.png';
-import profile from '../profile2.jpg';
+import github from '../assets/homepage/github final.jpg';
+import linkedin from '../assets/homepage/linkedin.svg';
+import profile from '../assets/homepage/profile2.jpg';
 
 interface HomepageProps {
     changeMainPage: (param: string) => void;

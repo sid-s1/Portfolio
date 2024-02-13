@@ -25,13 +25,13 @@ body {
 .landing-header, .social-links {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
 }
 
 .main-block {
   display: flex;
   height: 70%;
-  width: 90%;
+  width: 80%;
 }
 
 .content, .profile-photo {
