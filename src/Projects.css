@@ -14,12 +14,26 @@
     max-width: 40%;
     align-items: center;
     text-align: center;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     min-width: 300px;
     margin: 3vw;
     border-radius: 10px;
     box-shadow: 2px 5px 5px 0px gray;
     transition: 0.3s all ease;
+
+    position: relative;
+    border: none;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+    background: radial-gradient(red, #3984ff00 80%);
 }
 
 .project-card:hover {
