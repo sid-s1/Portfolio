@@ -28,7 +28,8 @@ type ProjectObject = {
     "projectLogo": string,
     "desc": string,
     "tech": (keyof typeof logoMapping)[],
-    "date": string
+    "date": string,
+    "link": string
 }
 
 interface ProjectCardProps {
@@ -45,13 +46,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
                 </div>
                 <div className="project-card-content projectName-and-link">
                     <h1 className="project-names">{project.name}</h1>
-                    <FontAwesomeIcon icon={faLink} />
+                    <a href={project.link} target="blank"><FontAwesomeIcon icon={faLink} className="project-link"/></a>
                 </div>
-                <div className="project-card-content">
-                    <p className="project-descriptions"><strong><em>Description: </em></strong>{project.desc}</p>
-                </div>
-                <div className="project-card-content project-date-container">
-                    <p className="project-descriptions project-dates">{project.date}</p>
+                <div className="desc-date-container">
+                    <div className="project-card-content">
+                        <p className="project-descriptions"><strong><em>Description: </em></strong>{project.desc}</p>
+                    </div>
+                    <div className="project-card-content project-date-container">
+                        <p className="project-descriptions project-dates">{project.date}</p>
+                    </div>
                 </div>
                 <div className="project-card-content tech-used">
                     <>

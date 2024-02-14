@@ -37,7 +37,8 @@ interface ProjectObject {
     "projectLogo": string,
     "desc": string,
     "tech": (keyof typeof logoMapping)[],
-    "date": string
+    "date": string,
+    "link": string
 }
 
 const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
@@ -48,28 +49,32 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "projectLogo": WordleLogo,
             "desc": "A twist on the NY Times Wordle that allows as many turns as players desire, and lets them build up their score; while also allowing them two more word-choices when they are close to the end of their attempts.",
             "tech": ["html", "css", "js"],
-            "date": "June 2022"
+            "date": "June 2022",
+            "link": "https://sid-s1.github.io/Project-1/"
         },
         {
             "name": "Shopping List",
             "projectLogo": ShoppingListLogo,
             "desc": "An app to create a shopping list using stores in the real-world (using Google Maps API) and to generate the shortest route between user's home address and all the stores on their list.",
             "tech": ["html", "css", "js", "python", "flask", "postgres"],
-            "date": "July 2022"
+            "date": "July 2022",
+            "link": "https://radiant-retreat-54789.herokuapp.com/"
         },
         {
             "name": "Tript",
             "projectLogo": TriptLogo,
             "desc": "A digital travel diary, allowing users to save details of all their favourite trips, activities & hotels. They can also search trips posted by other users allowing them to find new and exciting places to go. Our team of 3 used Github Projects to create project timeline and break the tasks into tickets.",
             "tech": ["html", "css", "js", "node", "postgres"],
-            "date": "September 2022"
+            "date": "September 2022",
+            "link": "https://ga-tript.herokuapp.com/"
         },
         {
             "name": "Appminder",
             "projectLogo": AppminderLogo,
             "desc": "A React/NodeJS app that helps a job applicant organise the details of their applications throughout the recruitment process. They can sort their applications across the four stages of Draft, Applied, Interviewing and Awaiting.",
             "tech": ["react", "css", "node", "postgres"],
-            "date": "November 2022"
+            "date": "November 2022",
+            "link": "https://appminder.herokuapp.com/"
         },
     ];
     return (
