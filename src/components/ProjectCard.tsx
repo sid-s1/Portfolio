@@ -1,5 +1,7 @@
 import React from "react";
 import "../Projects.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 import HTMLLogo from "../assets/tech logos/html.jpg";
 import CSSLogo from "../assets/tech logos/css.webp";
@@ -41,21 +43,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
                 <div className="project-card-content">
                     <img src={project.projectLogo} className="project-logos"/>
                 </div>
-                <div className="project-card-content">
+                <div className="project-card-content projectName-and-link">
                     <h1 className="project-names">{project.name}</h1>
+                    <FontAwesomeIcon icon={faLink} />
                 </div>
                 <div className="project-card-content">
                     <p className="project-descriptions"><strong><em>Description: </em></strong>{project.desc}</p>
                 </div>
-                <div className="project-card-content">
+                <div className="project-card-content project-date-container">
                     <p className="project-descriptions project-dates">{project.date}</p>
                 </div>
-                <div className="project-card-content">
-                    <div className="tech-used">
+                <div className="project-card-content tech-used">
+                    <>
                         {
                             project.tech.map(tech => <img key={tech} src={logoMapping[tech]} className="tech-logos"/>)
                         }
-                    </div>
+                    </>
                 </div>
             </>
             }
