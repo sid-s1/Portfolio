@@ -2,6 +2,9 @@ import React from "react";
 import "../Projects.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
+import { Tooltip } from "@mui/material";
+import Zoom from "@mui/material/Zoom";
 
 import HTMLLogo from "../assets/tech logos/html.jpg";
 import CSSLogo from "../assets/tech logos/css.webp";
@@ -29,7 +32,8 @@ type ProjectObject = {
     "desc": string,
     "tech": (keyof typeof logoMapping)[],
     "date": string,
-    "link": string
+    "link": string,
+    "github": string
 }
 
 interface ProjectCardProps {
@@ -46,7 +50,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
                 </div>
                 <div className="project-card-content projectName-and-link">
                     <h1 className="project-names">{project.name}</h1>
-                    <a href={project.link} target="blank"><FontAwesomeIcon icon={faLink} className="project-link"/></a>
+                    <Tooltip TransitionComponent={Zoom} title={project.name}>
+                        <a href={project.link} target="blank"><FontAwesomeIcon icon={faLink} className="project-link"/></a>
+                    </Tooltip>
                 </div>
                 <div className="desc-date-container">
                     <div className="project-card-content">
@@ -54,12 +60,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
                     </div>
                     <div className="project-card-content project-date-container">
                         <p className="project-descriptions project-dates">{project.date}</p>
+                        <Tooltip title="Github">
+                            <a href={project.github} target="blank"><FontAwesomeIcon icon={faGithubAlt} className="github-logos"/></a>
+                        </Tooltip>
                     </div>
                 </div>
                 <div className="project-card-content tech-used">
                     <>
                         {
-                            project.tech.map(tech => <img key={tech} src={logoMapping[tech]} className="tech-logos"/>)
+                            project.tech.map(tech => {
+                                return <Tooltip style={{backgroundColor: "black"}} TransitionComponent={Zoom} title = {tech[0].toUpperCase()+tech.slice(1)} className="tooltips">
+                                    <img key={tech} src={logoMapping[tech]} className="tech-logos"/>
+                                </Tooltip>
+                        })
                         }
                     </>
                 </div>
