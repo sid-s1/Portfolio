@@ -10,7 +10,10 @@ interface HomepageProps {
 }
 
 const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
-    const onNavbarClick = (param: string) => changeMainPage(param);
+    const onNavbarClick = (param: string) => {
+        changeMainPage(param);
+        setShowContactMeForm(false);
+    };
     const [showContactMeForm, setShowContactMeForm] = useState(false);
     const contactMeAction = () => setShowContactMeForm(true);
     return (
