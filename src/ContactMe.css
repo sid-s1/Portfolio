@@ -1,0 +1,5 @@
+.contact-me-form-container {
+    width: 50%;
+    display: flex;
+    border: 1px solid white;
+}
