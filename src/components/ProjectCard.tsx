@@ -6,13 +6,13 @@ import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
 import { Tooltip } from "@mui/material";
 import Zoom from "@mui/material/Zoom";
 
-import HTMLLogo from "../assets/tech logos/html.jpg";
+import HTMLLogo from "../assets/tech logos/html.svg";
 import CSSLogo from "../assets/tech logos/css.webp";
 import JSLogo from "../assets/tech logos/JavaScript-logo.png";
 import PYLogo from "../assets/tech logos/python.png";
 import FlaskLogo from "../assets/tech logos/flask.jpg";
 import PostgresLogo from "../assets/tech logos/Postgresql_elephant.svg.png";
-import NodeLogo from "../assets/tech logos/node.jpeg";
+import NodeLogo from "../assets/tech logos/nodejs-2.svg";
 import ReactLogo from "../assets/tech logos/react.png";
 
 const logoMapping = {

@@ -24,8 +24,12 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
                 <div className="contact-me">Contact Me</div>
             </div>
             <div className="socials-links">
-                <img src={github} alt="github-logo" className="link-icons github"/>
-                <img src={linkedin} alt="linkedin-logo" className="link-icons linkedin"/>
+                <a href="https://github.com/sid-s1?tab=repositories" target="blank">
+                    <img src={github} alt="github-logo" className="link-icons github"/>
+                </a>
+                <a href="https://linkedin.com/in/s-iddharth-ingh1" target="blank">
+                    <img src={linkedin} alt="linkedin-logo" className="link-icons linkedin"/>
+                </a>
             </div>
             </div>
             <div className='profile-photo-block'>
