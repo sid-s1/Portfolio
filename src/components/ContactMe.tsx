@@ -27,14 +27,12 @@ const ContactMeForm:React.FC = () => {
     return <div className="contact-me-form-container">
         {formSubmitted ? <SubmittedFormView /> : 
         <form ref={form} onSubmit={sendEmail}>
-            <label>Name</label>
-            <input type="text" name="user_name" ref={nameRef}/>
-            <label>Email</label>
-            <input type="email" name="user_email" ref={emailRef}/>
-            <label>Message</label>
-            <textarea name="message" />
-            <input type="submit" value="Send" />
+            <h2 className="contact-header">Contact Me</h2>
+            <input type="text" name="user_name" ref={nameRef} placeholder="Your Name" className="contact-form-inputs" required/>
+            <input type="email" name="user_email" ref={emailRef} placeholder="Your Email" className="contact-form-inputs" required/>
+            <textarea name="message" placeholder="Type your message.." className="contact-form-inputs" required/>
             <ReCAPTCHA sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY as string} />
+            <input type="submit" value="Send" className="contact-form-submit-btn"/>
         </form>}
     </div>
 };
