@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import ProjectCard from "./ProjectCard";
 import "../Projects.css";
@@ -44,6 +44,12 @@ interface ProjectObject {
 
 const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
     const onNavbarClick = (param: string) => changeMainPage(param);
+    const [searchItem, setSearchItem] = useState("");
+    const searchTesting = (searchParameter: string, mainString: string) => {
+        const regEx = new RegExp(searchParameter, "i");
+        return regEx.test(mainString);
+    };
+
     const projects: ProjectObject[] = [
         {
             "name": "Wordle",
@@ -85,10 +91,12 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
     return (
         <>
             <Header onNavbarClick={onNavbarClick}/>
-            <input type="text" className="project-search-field" placeholder="Search projects..."/>
+            <input type="text" className="project-search-field" placeholder="Search projects..." value={searchItem} onChange={(e) => setSearchItem(e.target.value)} />
             <div className="project-list">
                 {
-                    projects.map(project => <ProjectCard project={project}/>)
+                    projects
+                    .filter(project => Object.values(project).some(value => searchTesting(searchItem,value)))
+                    .map(project => <ProjectCard project={project}/>)
                 }
             </div>
         </>
