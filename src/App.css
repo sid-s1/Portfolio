@@ -2,6 +2,7 @@ body {
   cursor: url('../public/LKad-12_arrow.cur'),auto;
   font-family: 'Barlow', sans-serif;
   font-weight: 200;
+  letter-spacing: 2px;
 }
 
 a {

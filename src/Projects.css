@@ -32,7 +32,6 @@
     align-items: center;
     text-align: center;
     padding: 5px 20px;
-    margin: 1rem;
     font-size: 0.8rem;
     background-color: black;
     color: white;
@@ -125,10 +124,14 @@
     }
     .project-card {
         max-width: 220px;
-        min-height: 220px;
+        min-height: 450px;
+        max-height: 50%;
     }
     .project-search-field {
         caret-color: transparent;
+    }
+    .each-language-filter {
+        margin: 0.5rem;
     }
 }
 
@@ -138,11 +141,14 @@
     }
     .project-card {
         max-width: 300px;
-        min-height: 400px;
-        max-height: 400px;
+        min-height: 450px;
+        max-height: 50%;
     }
     .project-search-field {
         caret-color: transparent;
+    }
+    .each-language-filter {
+        margin: 0.5rem;
     }
 }
 
@@ -166,8 +172,11 @@
     }
     .project-card {
         max-width: 350px;
-        min-height: 400px;
-        max-height: 400px;
+        min-height: 450px;
+        max-height: 50%;
+    }
+    .each-language-filter {
+        margin: 1rem;
     }
     .each-language-filter:hover {
         cursor: url('../public/hand\ cursor\ 2.cur'), auto;
