@@ -39,7 +39,8 @@ interface ProjectObject {
     "tech": (keyof typeof logoMapping)[],
     "date": string,
     "link": string,
-    "github": string
+    "github": string,
+    "tags": string[]
 }
 
 const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
@@ -47,7 +48,10 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
     const [searchItem, setSearchItem] = useState("");
     const searchTesting = (searchParameter: string, mainString: string) => {
         const regEx = new RegExp(searchParameter, "i");
-        return regEx.test(mainString);
+        if (mainString.includes("image") === false) {
+            return regEx.test(mainString);
+        }
+        return false;
     };
 
     const projects: ProjectObject[] = [
@@ -58,7 +62,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["html", "css", "js"],
             "date": "June 2022",
             "link": "https://sid-s1.github.io/Project-1/",
-            "github": "https://github.com/sid-s1/Project-1"
+            "github": "https://github.com/sid-s1/Project-1",
+            "tags": ["javascript","new york times"]
         },
         {
             "name": "Shopping List",
@@ -67,7 +72,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["html", "css", "js", "python", "flask", "postgres"],
             "date": "July 2022",
             "link": "https://radiant-retreat-54789.herokuapp.com/",
-            "github": "https://github.com/sid-s1/Project-2"
+            "github": "https://github.com/sid-s1/Project-2",
+            "tags": ["javascript","sql","database","db"]
         },
         {
             "name": "Tript",
@@ -76,7 +82,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["html", "css", "js", "node", "postgres"],
             "date": "September 2022",
             "link": "https://ga-tript.herokuapp.com/",
-            "github": "https://github.com/sid-s1/Travel-App"
+            "github": "https://github.com/sid-s1/Travel-App",
+            "tags": ["javascript","sql","database","db"]
         },
         {
             "name": "Appminder",
@@ -85,7 +92,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["react", "css", "node", "postgres"],
             "date": "November 2022",
             "link": "https://appminder.herokuapp.com/",
-            "github": "https://github.com/itsnotalvin/appminder"
+            "github": "https://github.com/itsnotalvin/appminder",
+            "tags": ["sql","database","db"]
         },
     ];
     return (
