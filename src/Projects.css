@@ -18,6 +18,32 @@
     font-size: 0.7rem;
 }
 
+.language-filters {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.each-language-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px 20px;
+    margin: 1rem;
+    font-size: 0.8rem;
+    background-color: black;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 20px;
+    cursor: url('../public/LKad-12_arrow.cur'), auto;
+}
+
+.each-language-filter.selected-language {
+    background-color: grey;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -141,5 +167,9 @@
         max-width: 350px;
         min-height: 400px;
         max-height: 400px;
+    }
+    .each-language-filter:hover {
+        cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+        background-color: grey;
     }
 }

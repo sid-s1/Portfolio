@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import ProjectCard from "./ProjectCard";
+import LanguageFilter from "./LanguageFilter";
 import "../Projects.css";
 
 import WordleLogo from "../assets/app logos/worlde.webp";
@@ -46,7 +47,8 @@ interface ProjectObject {
 const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
     const onNavbarClick = (param: string) => changeMainPage(param);
     const [searchItem, setSearchItem] = useState("");
-    const searchTesting = (searchParameter: string, mainString: string) => {
+
+    const searchTestingWithoutImages = (searchParameter: string, mainString: string) => {
         const regEx = new RegExp(searchParameter, "i");
         if (mainString.includes("image") === false) {
             return regEx.test(mainString);
@@ -96,14 +98,30 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tags": ["sql","database","db"]
         },
     ];
+
+    const languageFilters = ["All","React","Node","Javascript","SQL"];
+    const [selectedFilter,setSelectedFilter] = useState("All");
+    const clickLanguageFilterAction = (filter: string) => setSelectedFilter(filter);
+
+    const filtering = (obj: ProjectObject) => {
+        if (selectedFilter === "All") return true;
+        return obj.tech.some(tech => new RegExp(selectedFilter,"i").test(tech)) || obj.tags.some(tag => new RegExp(selectedFilter,"i").test(tag));
+    };
+
     return (
         <>
             <Header onNavbarClick={onNavbarClick}/>
             <input type="text" className="project-search-field" placeholder="Search projects..." value={searchItem} onChange={(e) => setSearchItem(e.target.value)} />
+            <div className="language-filters">
+                {
+                    languageFilters.map(filter => <LanguageFilter filter={filter} clickLanguageFilter={clickLanguageFilterAction} selectedFilter={selectedFilter}/>)
+                }
+            </div>
             <div className="project-list">
                 {
                     projects
-                    .filter(project => Object.values(project).some(value => searchTesting(searchItem,value)))
+                    .filter(project => filtering(project))
+                    .filter(project => Object.values(project).some(value => searchTestingWithoutImages(searchItem,value)))
                     .map(project => <ProjectCard project={project}/>)
                 }
             </div>
