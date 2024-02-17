@@ -7,6 +7,43 @@
     justify-content: center;
 }
 
+.project-search-field {
+    width: 30%;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    border: 1px solid grey;
+    outline: 0px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.language-filters {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.each-language-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px 20px;
+    font-size: 0.8rem;
+    background-color: black;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 20px;
+    cursor: url('../public/LKad-12_arrow.cur'), auto;
+}
+
+.each-language-filter.selected-language {
+    background-color: grey;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -14,14 +51,11 @@
     align-items: flex-start;
     justify-content: center;
     border: 1px solid grey;
-    min-width: 200px;
-    max-width: 350px;
-    min-height: 300px;
-    max-height: 400px;
     margin: 3vw;
     border-radius: 10px;
     transition: 0.15s all ease;
     padding: 20px;
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 40%);
 }
 
 .project-card-content {
@@ -76,6 +110,7 @@
     margin: 3px;
     position: relative;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 40%);
 }
 
 .Tooltip {
@@ -83,13 +118,41 @@
     color: white;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 350px) {
     .tech-logos {
         opacity: 1;
     }
+    .project-card {
+        max-width: 220px;
+        min-height: 450px;
+        max-height: 50%;
+    }
+    .project-search-field {
+        caret-color: transparent;
+    }
+    .each-language-filter {
+        margin: 0.5rem;
+    }
 }
 
-@media (min-width: 951px) {
+@media (min-width: 351px) and (max-width: 1050px) {
+    .tech-logos {
+        opacity: 1;
+    }
+    .project-card {
+        max-width: 300px;
+        min-height: 450px;
+        max-height: 50%;
+    }
+    .project-search-field {
+        caret-color: transparent;
+    }
+    .each-language-filter {
+        margin: 0.5rem;
+    }
+}
+
+@media (min-width: 1051px) {
     .tech-logos{
         opacity: 0.7;
     }
@@ -106,5 +169,17 @@
     }
     .tech-logos:hover {
         transform: scale(1.2);
+    }
+    .project-card {
+        max-width: 350px;
+        min-height: 450px;
+        max-height: 50%;
+    }
+    .each-language-filter {
+        margin: 1rem;
+    }
+    .each-language-filter:hover {
+        cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+        background-color: grey;
     }
 }

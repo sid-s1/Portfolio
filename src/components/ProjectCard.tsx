@@ -33,7 +33,8 @@ type ProjectObject = {
     "tech": (keyof typeof logoMapping)[],
     "date": string,
     "link": string,
-    "github": string
+    "github": string,
+    "tags": string[]
 }
 
 interface ProjectCardProps {

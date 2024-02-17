@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import ProjectCard from "./ProjectCard";
+import LanguageFilter from "./LanguageFilter";
 import "../Projects.css";
 
 import WordleLogo from "../assets/app logos/worlde.webp";
@@ -39,11 +40,22 @@ interface ProjectObject {
     "tech": (keyof typeof logoMapping)[],
     "date": string,
     "link": string,
-    "github": string
+    "github": string,
+    "tags": string[]
 }
 
 const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
     const onNavbarClick = (param: string) => changeMainPage(param);
+    const [searchItem, setSearchItem] = useState("");
+
+    const searchTestingWithoutImages = (searchParameter: string, mainString: string) => {
+        const regEx = new RegExp(searchParameter, "i");
+        if (mainString.includes("image") === false) {
+            return regEx.test(mainString);
+        }
+        return false;
+    };
+
     const projects: ProjectObject[] = [
         {
             "name": "Wordle",
@@ -52,7 +64,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["html", "css", "js"],
             "date": "June 2022",
             "link": "https://sid-s1.github.io/Project-1/",
-            "github": "https://github.com/sid-s1/Project-1"
+            "github": "https://github.com/sid-s1/Project-1",
+            "tags": ["javascript","new york times"]
         },
         {
             "name": "Shopping List",
@@ -61,7 +74,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["html", "css", "js", "python", "flask", "postgres"],
             "date": "July 2022",
             "link": "https://radiant-retreat-54789.herokuapp.com/",
-            "github": "https://github.com/sid-s1/Project-2"
+            "github": "https://github.com/sid-s1/Project-2",
+            "tags": ["javascript","sql","database","db"]
         },
         {
             "name": "Tript",
@@ -70,7 +84,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["html", "css", "js", "node", "postgres"],
             "date": "September 2022",
             "link": "https://ga-tript.herokuapp.com/",
-            "github": "https://github.com/sid-s1/Travel-App"
+            "github": "https://github.com/sid-s1/Travel-App",
+            "tags": ["javascript","sql","database","db"]
         },
         {
             "name": "Appminder",
@@ -79,15 +94,35 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["react", "css", "node", "postgres"],
             "date": "November 2022",
             "link": "https://appminder.herokuapp.com/",
-            "github": "https://github.com/itsnotalvin/appminder"
+            "github": "https://github.com/itsnotalvin/appminder",
+            "tags": ["sql","database","db"]
         },
     ];
+
+    const languageFilters = ["All","React","Node","Javascript","SQL"];
+    const [selectedFilter,setSelectedFilter] = useState("All");
+    const clickLanguageFilterAction = (filter: string) => setSelectedFilter(filter);
+
+    const filtering = (obj: ProjectObject) => {
+        if (selectedFilter === "All") return true;
+        return obj.tech.some(tech => new RegExp(selectedFilter,"i").test(tech)) || obj.tags.some(tag => new RegExp(selectedFilter,"i").test(tag));
+    };
+
     return (
         <>
             <Header onNavbarClick={onNavbarClick}/>
+            <input type="text" className="project-search-field" placeholder="Search projects..." value={searchItem} onChange={(e) => setSearchItem(e.target.value)} />
+            <div className="language-filters">
+                {
+                    languageFilters.map(filter => <LanguageFilter filter={filter} clickLanguageFilter={clickLanguageFilterAction} selectedFilter={selectedFilter}/>)
+                }
+            </div>
             <div className="project-list">
                 {
-                    projects.map(project => <ProjectCard project={project}/>)
+                    projects
+                    .filter(project => filtering(project))
+                    .filter(project => Object.values(project).some(value => searchTestingWithoutImages(searchItem,value)))
+                    .map(project => <ProjectCard project={project}/>)
                 }
             </div>
         </>
