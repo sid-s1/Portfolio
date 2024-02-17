@@ -2,7 +2,6 @@ body {
   cursor: url('../public/LKad-12_arrow.cur'),auto;
   font-family: 'Barlow', sans-serif;
   font-weight: 200;
-  letter-spacing: 2px;
 }
 
 a {
@@ -11,9 +10,18 @@ a {
   cursor: url('../public/hand\ cursor\ 2.cur'), auto;
 }
 
+.name {
+  margin: 0.5rem;
+}
+
+.title {
+  margin: 0;
+}
+
 .name, .title {
   font-weight: 200;
-  margin: 0;
+  word-wrap: break-word;
+  text-wrap: wrap;
 }
 
 .App {
@@ -40,6 +48,7 @@ a {
   height: 70%;
   width: 80%;
   justify-content: center;
+  align-items: center;
 }
 
 .content, .profile-photo {
@@ -89,10 +98,6 @@ a {
   border-radius: 50%;
 }
 
-.name, .title {
-  text-wrap: wrap;
-}
-
 .link-icons {
   width: 4rem;
   margin: 0.3rem;
@@ -115,12 +120,15 @@ a {
 }
 
 @media (max-width: 600px) {
+  body {
+    letter-spacing: 1px;
+  }
   .header-icons {
     padding: 5%;
   }
   .landing-header,
   .contact-me {
-    font-size: 15px;
+    font-size: 0.85rem;
   }
   .main-block {
     justify-content: center;
@@ -145,10 +153,10 @@ a {
     width: 85%;
   }
   .name {
-    font-size: 50px;
+    font-size: 2.2rem;
   }
   .title {
-    font-size: 30px;
+    font-size: 1rem;
   }
   .contact-me {
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
@@ -159,12 +167,15 @@ a {
 }
 
 @media (min-width: 601px) and (max-width: 950px) {
+  body {
+    letter-spacing: 1px;
+  }
   .header-icons {
     padding: 4%;
   }
   .landing-header,
   .contact-me {
-    font-size: 20px;
+    font-size: 1.2rem;
   }
   .content, .profile-photo {
     margin: 3%;
@@ -194,10 +205,10 @@ a {
   }
 
   .name {
-    font-size: 60px;
+    font-size: 2.75rem;
   }
   .title {
-    font-size: 40px;
+    font-size: 1.25rem;
   }
   .contact-me {
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
@@ -207,7 +218,48 @@ a {
   }
 }
 
-@media (min-width: 951px) {
+@media (min-width: 951px) and (max-width: 1400px) {
+  .name {
+    font-size: 2.75rem;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
+  body {
+    letter-spacing: 2px;
+  }
+  .header-icons {
+    padding: 3%;
+  }
+  .landing-header,
+  .contact-me {
+    font-size: 1.2rem;
+  }
+  .content,
+  .profile-photo {
+    margin: 2.5%;
+  }
+  .profile-photo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile-photo-block-mobile {
+    display: none;
+  }
+  .contact-me {
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
+  }
+  .contact-me li {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1401px) {
+  body {
+    letter-spacing: 2px;
+  }
   .header-icons {
     padding: 3%;
   }
@@ -218,7 +270,7 @@ a {
     -moz-text-decoration-color: white;
   }
   .landing-header, .contact-me {
-    font-size: 25px;
+    font-size: 1.2rem;
   }
   .content, .profile-photo {
     margin: 2.5%;
@@ -234,10 +286,10 @@ a {
     display: none;
   }
   .name {
-    font-size: 80px;
+    font-size: 3.5rem;
   }
   .title {
-    font-size: 50px;
+    font-size: 1.8rem;
   }
 
   .link-icons {
