@@ -151,6 +151,9 @@ a {
   .title {
     font-size: 30px;
   }
+  .contact-me {
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
+  }
 }
 
 @media (min-width: 601px) and (max-width: 950px) {
@@ -193,6 +196,9 @@ a {
   }
   .title {
     font-size: 40px;
+  }
+  .contact-me {
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
   }
 }
 
@@ -243,11 +249,13 @@ a {
 
   .contact-me {
     opacity: 0.8;
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 55%);
   }
 
   .contact-me:hover {
     transform: scale(1.1);
     opacity: 1;
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 78%);
   }
   
   /* contact me animations start */

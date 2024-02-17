@@ -30,7 +30,7 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
                 </div>
                 <div className='profile-photo-block-mobile'>
                     <img src={profile} alt='profile-photo'className='profile-photo'/>
-                    <div className="contact-me" onClick={contactMeAction}>Contact Me</div>
+                    <ul className="contact-me" onClick={contactMeAction}><li>Contact Me</li></ul>
                 </div>
                 <div className="socials-links">
                     <a href="https://github.com/sid-s1?tab=repositories" target="blank">
