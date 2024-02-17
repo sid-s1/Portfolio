@@ -7,6 +7,17 @@
     justify-content: center;
 }
 
+.project-search-field {
+    width: 30%;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    border: 1px solid grey;
+    outline: 0px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -89,6 +100,9 @@
         max-width: 220px;
         min-height: 220px;
     }
+    .project-search-field {
+        caret-color: transparent;
+    }
 }
 
 @media (min-width: 351px) and (max-width: 1050px) {
@@ -99,6 +113,9 @@
         max-width: 300px;
         min-height: 400px;
         max-height: 400px;
+    }
+    .project-search-field {
+        caret-color: transparent;
     }
 }
 

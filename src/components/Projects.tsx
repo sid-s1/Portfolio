@@ -85,6 +85,7 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
     return (
         <>
             <Header onNavbarClick={onNavbarClick}/>
+            <input type="text" className="project-search-field" placeholder="Search projects..."/>
             <div className="project-list">
                 {
                     projects.map(project => <ProjectCard project={project}/>)
