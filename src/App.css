@@ -75,7 +75,6 @@ a {
 
 .contact-me li {
   position: relative;
-  transition: all 0.15s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .contact-me li::before,

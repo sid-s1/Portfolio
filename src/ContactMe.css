@@ -17,8 +17,8 @@ form {
     font-weight: lighter;
 }
 
-.contact-header, .contact-form-inputs, .contact-form-submit-btn {
-    box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
+.contact-header, .contact-form-submit-btn {
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 55%);
 }
 
 .contact-form-inputs, .contact-form-submit-btn {
@@ -29,6 +29,13 @@ form {
     outline: 0px;
     font-family: inherit;
     font-size: inherit;
+    background-color: black;
+    color: white;
+    border: 1px solid grey;
+}
+
+.contact-form-submit-btn {
+    border: 0px;
 }
 
 textarea {
@@ -37,9 +44,7 @@ textarea {
 }
 
 .contact-form-submit-btn {
-    box-shadow: rgb(8 25 195 / 65%);
-    color: white;
-    background-color: black;
+    box-shadow: rgb(8 25 195 / 55%);
     transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -56,12 +61,14 @@ textarea {
     .contact-header {
         font-size: 1rem;
     }
+    .contact-form-inputs {
+        caret-color: transparent;
+    }
 }
 
 @media (min-width: 1051px) {
     .contact-form-submit-btn {
         opacity: 0.8;
-        box-shadow: 0 0 15px 4px rgb(8 25 195 / 55%);
         font-weight: lighter;
         font-size: 1.5rem;
     }
