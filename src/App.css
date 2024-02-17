@@ -63,7 +63,7 @@ a {
 }
 
 .contact-me {
-  margin: 5vh 0 0 0;
+  margin: 10px 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,6 @@ a {
 
 .contact-me li {
   position: relative;
-  padding: 10px;
   transition: all 0.15s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -154,6 +153,9 @@ a {
   .contact-me {
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
   }
+  .contact-me li {
+    padding: 10px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 950px) {
@@ -199,6 +201,9 @@ a {
   }
   .contact-me {
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
+  }
+  .contact-me li {
+    padding: 15px;
   }
 }
 
@@ -298,4 +303,7 @@ a {
     transition-delay: 0s, 0.3s, 0s;
   }
   /* contact me animation ends */
+  .contact-me li {
+    padding: 20px;
+  }
 }
