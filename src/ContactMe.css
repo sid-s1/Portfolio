@@ -53,6 +53,9 @@ textarea {
     textarea {
         height: 100px;
     }
+    .contact-header {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 1051px) {
@@ -67,6 +70,9 @@ textarea {
         transform: scale(1.1);
         opacity: 1;
         box-shadow: 0 0 15px 4px rgb(8 25 195 / 78%);
+        font-size: 1.5rem;
+    }
+    .contact-header {
         font-size: 1.5rem;
     }
 }
