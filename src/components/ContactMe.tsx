@@ -20,7 +20,7 @@ const ContactMeForm:React.FC = () => {
         })
         .then(response => setFormSubmitted(true))
         .catch(error => {
-            alert(`Please address - ${error.text}`);
+            alert('Please check the Captcha box so I can make sure you are not a robot ;)');
         })
     };
 
@@ -31,7 +31,7 @@ const ContactMeForm:React.FC = () => {
             <input type="text" name="user_name" ref={nameRef} placeholder="Your Name" className="contact-form-inputs" required/>
             <input type="email" name="user_email" ref={emailRef} placeholder="Your Email" className="contact-form-inputs" required/>
             <textarea name="message" placeholder="Type your message.." className="contact-form-inputs" required/>
-            <ReCAPTCHA sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY as string} />
+            <ReCAPTCHA theme="dark" sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY as string} />
             <input type="submit" value="Send" className="contact-form-submit-btn"/>
         </form>}
     </div>

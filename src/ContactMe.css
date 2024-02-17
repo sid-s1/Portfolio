@@ -1,10 +1,11 @@
 .contact-me-form-container {
+    box-sizing: border-box;
     width: 50%;
     display: flex;
-    /* border: 1px solid white; */
 }
 
 form {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,10 +14,11 @@ form {
 }
 .contact-header {
     padding: 20px;
+    font-weight: lighter;
 }
 
 .contact-header, .contact-form-inputs, .contact-form-submit-btn {
-    box-shadow: 0 0 15px 4px rgb(8 25 195 / 78%);
+    box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
 }
 
 .contact-form-inputs, .contact-form-submit-btn {
@@ -35,18 +37,37 @@ textarea {
 }
 
 .contact-form-submit-btn {
-    background-color: rgb(8 25 195 / 78%);
-    font-weight: bold;
+    box-shadow: rgb(8 25 195 / 65%);
     color: white;
+    background-color: black;
+    transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-@media (min-width: 951px) {
+@media (max-width: 1050px) {
+    .contact-form-inputs,
+    .contact-form-submit-btn {
+        width: 250px;
+        padding: 15px;
+        margin: 1rem;
+    }
+    textarea {
+        height: 100px;
+    }
+}
+
+@media (min-width: 1051px) {
     .contact-form-submit-btn {
         opacity: 0.8;
+        box-shadow: 0 0 15px 4px rgb(8 25 195 / 55%);
+        font-weight: lighter;
+        font-size: 1.5rem;
     }
     .contact-form-submit-btn:hover {
         cursor: url('../public/hand\ cursor\ 2.cur'), auto;
+        transform: scale(1.1);
         opacity: 1;
+        box-shadow: 0 0 15px 4px rgb(8 25 195 / 78%);
+        font-size: 1.5rem;
     }
 }
 
