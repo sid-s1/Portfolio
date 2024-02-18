@@ -94,3 +94,6 @@ textarea {
     text-align: center;
     text-justify: inter-word;
 }
+.submitted-form-tick-container img {
+    margin: 1.5rem;
+}
