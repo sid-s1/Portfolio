@@ -1,10 +1,12 @@
 .project-list {
     display: flex;
-    flex-wrap: wrap;
     flex: 1;
+    height: 80%;
     width: 80%;
     min-width: 320px;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .project-search-field {
@@ -51,7 +53,7 @@
     align-items: flex-start;
     justify-content: center;
     border: 1px solid grey;
-    margin: 3vw;
+    margin: 2vw;
     border-radius: 10px;
     transition: 0.15s all ease;
     padding: 20px;
@@ -123,7 +125,8 @@
         opacity: 1;
     }
     .project-card {
-        max-width: 220px;
+        min-width: 240px;
+        max-width: 240px;
         min-height: 450px;
         max-height: 50%;
     }
@@ -140,6 +143,7 @@
         opacity: 1;
     }
     .project-card {
+        min-width: 240px;
         max-width: 300px;
         min-height: 450px;
         max-height: 50%;
@@ -171,6 +175,7 @@
         transform: scale(1.2);
     }
     .project-card {
+        min-width: 240px;
         max-width: 350px;
         min-height: 450px;
         max-height: 50%;
