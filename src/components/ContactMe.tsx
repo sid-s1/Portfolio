@@ -20,6 +20,7 @@ const ContactMeForm:React.FC = () => {
         })
         .then(response => setFormSubmitted(true))
         .catch(error => {
+            console.log(error);
             alert('Please check the Captcha box so I can make sure you are not a robot ;)');
         })
     };
