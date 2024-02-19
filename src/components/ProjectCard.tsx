@@ -13,7 +13,8 @@ import PYLogo from "../assets/tech logos/python.png";
 import FlaskLogo from "../assets/tech logos/flask.jpg";
 import PostgresLogo from "../assets/tech logos/Postgresql_elephant.svg.png";
 import NodeLogo from "../assets/tech logos/nodejs-2.svg";
-import ReactLogo from "../assets/tech logos/react.png";
+import ReactLogo from "../assets/tech logos/react.svg";
+import TSLogo from "../assets/tech logos/ts-logo-128.svg";
 
 const logoMapping = {
     "html": HTMLLogo,
@@ -23,7 +24,8 @@ const logoMapping = {
     "flask": FlaskLogo,
     "postgres": PostgresLogo,
     "node": NodeLogo,
-    "react": ReactLogo
+    "react": ReactLogo,
+    "typescript": TSLogo
 };
 
 type ProjectObject = {
@@ -32,6 +34,7 @@ type ProjectObject = {
     "desc": string,
     "tech": (keyof typeof logoMapping)[],
     "date": string,
+    "type": string,
     "link": string,
     "github": string,
     "tags": string[]
@@ -60,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
                         <p className="project-descriptions"><strong><em>Description: </em></strong>{project.desc}</p>
                     </div>
                     <div className="project-card-content project-date-container">
-                        <p className="project-descriptions project-dates">{project.date}</p>
+                        <p className="project-descriptions project-dates">{project.type}</p>
                         <Tooltip title="Github">
                             <a href={project.github} target="blank"><FontAwesomeIcon icon={faGithubAlt} className="github-logos"/></a>
                         </Tooltip>

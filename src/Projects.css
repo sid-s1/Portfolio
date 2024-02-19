@@ -111,7 +111,7 @@
     padding: 5px;
     margin: 3px;
     position: relative;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.15s cubic-bezier(0.075, 0.82, 0.165, 1);
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 40%);
 }
 
