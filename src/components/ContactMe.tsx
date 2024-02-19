@@ -24,8 +24,6 @@ const ContactMeForm:React.FC = () => {
         })
     };
 
-    console.log(process.env.REACT_APP_CAPTCHA_SITE_KEY);
-
     return <div className="contact-me-form-container">
         {formSubmitted ? <SubmittedFormView /> : 
         <form ref={form} onSubmit={sendEmail}>
