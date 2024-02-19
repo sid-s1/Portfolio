@@ -34,6 +34,10 @@ form {
     border: 1px solid grey;
 }
 
+.contact-form-inputs:focus {
+    border: 1px solid white;
+}
+
 .contact-form-submit-btn {
     border: 0px;
 }
@@ -60,9 +64,6 @@ textarea {
     }
     .contact-header {
         font-size: 1rem;
-    }
-    .contact-form-inputs {
-        caret-color: transparent;
     }
     .captcha-error-message {
         width: 100%;
