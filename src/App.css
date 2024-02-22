@@ -28,7 +28,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   width: auto;
   min-width: 320px;
   background-color: black;
@@ -51,6 +51,10 @@ a {
   min-height: 700px;
 }
 
+.homepage-intro {
+  text-justify: inter-word;
+}
+
 .content, .profile-photo {
   display: flex;
   flex-direction: column;
@@ -63,7 +67,7 @@ a {
 }
 
 .profile-photo {
-  width: 80%;
+  width: 60%;
 }
 
 .profile-photo-block {
@@ -95,6 +99,11 @@ a {
 
 .profile-photo {
   border-radius: 50%;
+}
+
+.tech-logos-homepage {
+  width: 20px;
+  height: 20px;
 }
 
 .link-icons {
@@ -226,7 +235,7 @@ a {
     font-size: 1.25rem;
   }
   body {
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
   }
   .header-icons {
     padding: 3%;
@@ -258,7 +267,7 @@ a {
 
 @media (min-width: 1401px) {
   body {
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
   }
   .header-icons {
     padding: 3%;
@@ -280,6 +289,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
   }
 
   .profile-photo-block-mobile {
