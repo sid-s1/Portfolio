@@ -193,7 +193,7 @@ a {
     text-align: center;
   }
   .homepage-intro-content.hidden {
-    display: none;
+    opacity: 0.5;
   }
   .homepage-intro-content > p {
     margin: 0;
@@ -255,7 +255,7 @@ a {
     letter-spacing: 0rem;
   }
   .homepage-intro-content.hidden {
-    display: none;
+    opacity: 0.5;
   }
   .profile-photo {
     width: 40%;
@@ -303,7 +303,7 @@ a {
     letter-spacing: 0.5px;
   }
   .homepage-intro-content.hidden {
-    display: none;
+    opacity: 0.5;
   }
   .profile-photo-block {
     display: flex;
