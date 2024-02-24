@@ -10,20 +10,6 @@ a {
   cursor: url('../public/hand\ cursor\ 2.cur'), auto;
 }
 
-.name {
-  margin: 0.5rem 0;
-}
-
-.title {
-  margin: 0;
-}
-
-.name, .title {
-  font-weight: 200;
-  word-wrap: break-word;
-  text-wrap: wrap;
-}
-
 .App {
   display: flex;
   flex-direction: column;
@@ -182,7 +168,7 @@ a {
 
 @media (max-width: 600px) {
   body {
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
   .header-icons {
     padding: 5%;
@@ -231,12 +217,6 @@ a {
   }
   .content {
     width: 85%;
-  }
-  .name {
-    font-size: 2.2rem;
-  }
-  .title {
-    font-size: 1rem;
   }
   .contact-me {
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
@@ -294,13 +274,6 @@ a {
   .content {
     width: 85%;
   }
-
-  .name {
-    font-size: 2.75rem;
-  }
-  .title {
-    font-size: 1.25rem;
-  }
   .contact-me {
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 65%);
   }
@@ -310,12 +283,6 @@ a {
 }
 
 @media (min-width: 951px) and (max-width: 1200px) {
-  .name {
-    font-size: 2.75rem;
-  }
-  .title {
-    font-size: 1.25rem;
-  }
   body {
     letter-spacing: 1.5px;
   }
@@ -387,12 +354,6 @@ a {
 
   .profile-photo-block-mobile {
     display: none;
-  }
-  .name {
-    font-size: 3.5rem;
-  }
-  .title {
-    font-size: 1.8rem;
   }
 
   .link-icons {
