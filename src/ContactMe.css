@@ -1,7 +1,20 @@
+@keyframes custom-fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .contact-me-form-container {
     box-sizing: border-box;
     width: 50%;
     display: flex;
+    animation-name: custom-fadein;
+    animation-duration: 1s;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
@@ -13,7 +26,7 @@ form {
     width: 100%;
 }
 .contact-header {
-    padding: 20px;
+    padding: 15px;
     font-weight: lighter;
 }
 
@@ -21,13 +34,22 @@ form {
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 55%);
 }
 
-.contact-form-inputs, .contact-form-submit-btn {
+.contact-form-inputs {
     width: 400px;
     padding: 20px;
+}
+
+.contact-form-submit-btn {
+    width: 100px;
+    padding: 10px;
+}
+
+.contact-form-inputs, .contact-form-submit-btn {
     margin: 1rem;
     border: 0px;
     outline: 0px;
     font-family: inherit;
+    letter-spacing: inherit;
     font-size: inherit;
     background-color: black;
     color: white;
@@ -53,17 +75,23 @@ textarea {
 }
 
 @media (max-width: 1050px) {
-    .contact-form-inputs,
-    .contact-form-submit-btn {
+    .contact-me-form-container {
+        font-size: 0.85rem;
+    }
+    .contact-form-inputs {
         width: 250px;
         padding: 15px;
+        margin: 1rem;
+    }
+    .contact-form-submit-btn {
+        width: 75px;
         margin: 1rem;
     }
     textarea {
         height: 100px;
     }
     .contact-header {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
     .captcha-error-message {
         width: 100%;
@@ -76,17 +104,16 @@ textarea {
     .contact-form-submit-btn {
         opacity: 0.8;
         font-weight: lighter;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .contact-form-submit-btn:hover {
         cursor: url('../public/hand\ cursor\ 2.cur'), auto;
-        transform: scale(1.1);
         opacity: 1;
         box-shadow: 0 0 15px 4px rgb(8 25 195 / 78%);
-        font-size: 1.5rem;
     }
     .contact-header {
-        font-size: 1.5rem;
+        padding: 20px;
+        font-size: 1.2rem;
     }
     .captcha-error-message {
         width: 50%;

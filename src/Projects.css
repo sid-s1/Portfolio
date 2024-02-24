@@ -1,3 +1,13 @@
+@keyframes custom-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .project-list {
     display: flex;
     flex: 1;
@@ -7,6 +17,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    animation-name: custom-fadein;
+    animation-duration: 2s;
 }
 
 .project-search-field {
@@ -14,10 +26,16 @@
     background-color: black;
     padding: 10px;
     color: white;
-    border: 1px solid grey;
+    border: 1px solid rgb(8 25 195 / 40%);
     outline: 0px;
     border-radius: 20px;
     font-size: 0.7rem;
+    animation-name: custom-fadein;
+    animation-duration: 2s;
+}
+
+.project-search-field:focus {
+    border: 1px solid white;
 }
 
 .language-filters {
@@ -26,6 +44,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    animation-name: custom-fadein;
+    animation-duration: 2s;
 }
 
 .each-language-filter {
@@ -37,13 +57,16 @@
     font-size: 0.8rem;
     background-color: black;
     color: white;
-    border: 1px solid grey;
+    border: 1px solid rgb(8 25 195 / 40%);
     border-radius: 20px;
     cursor: url('../public/LKad-12_arrow.cur'), auto;
+    transition: 0.3s ease all;
 }
 
 .each-language-filter.selected-language {
-    background-color: grey;
+    border: 1px solid white;
+    background-color: white;
+    color: black;
 }
 
 .project-card {
@@ -58,6 +81,8 @@
     transition: 0.15s all ease;
     padding: 20px;
     box-shadow: 0 0 15px 4px rgb(8 25 195 / 40%);
+    animation-name: custom-fadein;
+    animation-duration: 2s;
 }
 
 .project-card-content {
@@ -130,9 +155,6 @@
         min-height: 450px;
         max-height: 50%;
     }
-    .project-search-field {
-        caret-color: transparent;
-    }
     .each-language-filter {
         margin: 0.5rem;
     }
@@ -147,9 +169,6 @@
         max-width: 300px;
         min-height: 450px;
         max-height: 50%;
-    }
-    .project-search-field {
-        caret-color: transparent;
     }
     .each-language-filter {
         margin: 0.5rem;
@@ -185,6 +204,8 @@
     }
     .each-language-filter:hover {
         cursor: url('../public/hand\ cursor\ 2.cur'), auto;
-        background-color: grey;
+        background-color: white;
+        color: black;
+        border: 1px solid white;
     }
 }

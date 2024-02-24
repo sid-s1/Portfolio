@@ -1,0 +1,39 @@
+@keyframes custom-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.background-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70%;
+    animation-name: custom-fadein;
+    animation-duration: 2s;
+}
+
+.background-info > h3 {
+    text-decoration: underline;
+}
+
+.background-info > p {
+    text-align: start;
+}
+
+@media (max-width: 750px) {
+    .background-info > p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 751px) {
+    .background-info>p {
+        font-size: 1rem;
+    }
+}
