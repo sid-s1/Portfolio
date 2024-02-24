@@ -46,7 +46,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
     return (
-        <div className="project-card">
+        <a href={project.link} target="_blank"><div className="project-card">
             {   
             <>
                 <div className="project-card-content">
@@ -82,7 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
                 </div>
             </>
             }
-        </div>
+        </div></a>
     )
 };
 
