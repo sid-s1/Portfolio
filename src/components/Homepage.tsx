@@ -52,11 +52,16 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
         "Leadership 🌟"
     ];
 
+    const [showIntroContent,setShowIntroContent] = useState("homepage-intro-content");
+
     // from MUI documentation
     const [expandedAccordion, setExpandedAccordion] = useState<string | false>("");
     
     // from MUI documentation
-    const handleChangeOfAccordion = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => setExpandedAccordion(newExpanded ? panel : false);
+    const handleChangeOfAccordion = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+        setExpandedAccordion(newExpanded ? panel : false);
+        setShowIntroContent(newExpanded ? "homepage-intro-content hidden" : "homepage-intro-content");
+    };
 
     return (
         <>
@@ -67,52 +72,55 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
                 <>
                 <div className="content">
                 <div className="homepage-intro">
-                    <p>Hello! 🙋🏻‍♂️ I'm Siddharth </p>
-                    <p>I go by Software Engineer 👨🏻‍💻, but you can also call me Sid!</p>
-                    <p>Over the years, in university 🎓 and then in workplaces 👨🏻‍💼, I have learned invaluable lessons about working in teams, collaboratively towards shared goals</p>
-                    <Accordion expanded={expandedAccordion === 'panel1'} onChange={handleChangeOfAccordion('panel1')}>
+                    <div className={showIntroContent}>
+                        <p>Hello! 🙋🏻‍♂️ I'm Siddharth </p>
+                        <p>I go by Software Engineer 👨🏻‍💻, but you can also call me Sid!</p>
+                        <p>Over the years, in university 🎓 and then in workplaces 👨🏻‍💼, I have learned invaluable lessons about working in teams, collaboratively towards shared goals</p>
+                    </div>
+                    <Accordion expanded={expandedAccordion === 'panel1'} onChange={handleChangeOfAccordion('panel1')} className="accordions" disableGutters style={{backgroundColor: "black"}}>
                         <AccordionSummary
                         expandIcon={<ExpandMoreIcon style={{color: "white"}}/>}
                         aria-controls="panel1-content"
                         id="panel1-header"
-                        style={{backgroundColor: "black",color: "white"}}
+                        style={{backgroundColor: "black",color: "white",minHeight: 50, maxHeight: 50}}
                         >
-                        <Typography><p>🔑 Key Skills:</p></Typography>
+                        <Typography className="accordion-text"><p className="accordion-text">🔑 Key Skills</p></Typography>
                         </AccordionSummary>
                         <AccordionDetails style={{backgroundColor: "black",color: "white"}}>
-                            <Typography>
-                                <ul>
+                            <Typography className="accordion-text">
+                                <ul className="skill-lists">
                                     {
-                                        keySkills.map(skill => <li>{skill}</li>)
+                                        keySkills.map(skill => <li className="accordion-text">{skill}</li>)
                                     }
                                 </ul>
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion expanded={expandedAccordion === 'panel2'} onChange={handleChangeOfAccordion('panel2')}>
+                    <Accordion expanded={expandedAccordion === 'panel2'} onChange={handleChangeOfAccordion('panel2')} className="accordions" disableGutters style={{backgroundColor: "black"}}>
                         <AccordionSummary
                         expandIcon={<ExpandMoreIcon style={{color: "white"}}/>}
                         aria-controls="panel1-content"
                         id="panel1-header"
-                        style={{backgroundColor: "black",color: "white"}}
+                        style={{backgroundColor: "black",color: "white",minHeight: 50, maxHeight: 50}}
                         >
-                        <Typography><p>🚀 Engineering Skills:</p></Typography>
+                        <Typography><p className="accordion-text">🚀 Engineering Skills</p></Typography>
                         </AccordionSummary>
                         <AccordionDetails style={{backgroundColor: "black",color: "white"}}>
                             <Typography>
-                                <ul>
+                                <ul className="skill-lists">
                                     {
-                                        techSkills.map((skill,i) => <li>{skill}</li>)
+                                        techSkills.map((skill,i) => <li className="accordion-text">{skill}</li>)
                                     }
                                 </ul>
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <p>Download my resume <a href={Resume} target="_blank" style={{textDecoration: "underline"}}>here</a></p>
+                    <ul className="contact-me intro-contact" onClick={contactMeAction}><li>Contact Me</li></ul>
+                    <p className="mobile-view-resume">Download my resume <a href={Resume} target="_blank" style={{textDecoration: "underline"}}>here</a></p>
                 </div>
                 <div className='profile-photo-block-mobile'>
                     <img src={profile} alt='profile-photo'className='profile-photo'/>
-                    <ul className="contact-me" onClick={contactMeAction}><li>Contact Me</li></ul>
+                    <p>Download my resume <a href={Resume} target="_blank" style={{textDecoration: "underline"}}>here</a></p>
                 </div>
                 </div>
                 <div className='profile-photo-block'>
