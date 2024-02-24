@@ -31,9 +31,15 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
     const onNavbarClick = (param: string) => {
         changeMainPage(param);
         setShowContactMeForm(false);
+        setSelectedPage(param);
     };
     const [showContactMeForm, setShowContactMeForm] = useState(false);
-    const contactMeAction = () => setShowContactMeForm(true);
+    const [selectedPage, setSelectedPage] = useState("Homepage");
+    const contactMeAction = () => {
+        setShowContactMeForm(true);
+        setSelectedPage("Homepage");
+    }
+
     const techSkills = [
     <p className="tech-skills-homepage">React <img className="tech-logos-homepage" src={ReactLogo} /></p>,
     <p className="tech-skills-homepage">Node <img className="tech-logos-homepage" src={NodeLogo} /></p>,
@@ -65,11 +71,9 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
 
     return (
         <>
-        <Header onNavbarClick={onNavbarClick}/>
+        <Header onNavbarClick={onNavbarClick} selectedPage={selectedPage}/>
+        {showContactMeForm ? <ContactMeForm /> : 
         <div className="main-block">
-            {
-                showContactMeForm ? <ContactMeForm /> : 
-                <>
                 <div className="content">
                 <div className="homepage-intro">
                     <div className={showIntroContent}>
@@ -135,9 +139,7 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
                         </a>
                     </div>
                 </div>
-                </>
-            }
-        </div>
+        </div>}
       </>
     )
 };

@@ -129,8 +129,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
 
     return (
         <>
-            <Header onNavbarClick={onNavbarClick}/>
-            <input type="text" className="project-search-field" placeholder="Search projects..." value={searchItem} onChange={(e) => setSearchItem(e.target.value)} />
+            <Header onNavbarClick={onNavbarClick} selectedPage="Projects"/>
+            <input type="text" className="project-search-field" placeholder="Search projects..." value={searchItem} onChange={(e) => setSearchItem(e.target.value)}/>
             <div className="language-filters">
                 {
                     languageFilters.map(filter => <LanguageFilter filter={filter} clickLanguageFilter={clickLanguageFilterAction} selectedFilter={selectedFilter}/>)

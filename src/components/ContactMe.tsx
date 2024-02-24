@@ -23,31 +23,33 @@ const ContactMeForm:React.FC = () => {
         .then(response => setFormSubmitted(true))
         .catch(error => {
             console.log(error);
-            setCaptchaNotEntered("Please check the Captcha box so I can make sure you are not a robot ;)")
-            setNotifyUserToEnterRecaptcha("recaptcha-container activate")
-            // alert('Please check the Captcha box so I can make sure you are not a robot ;)');
+            setCaptchaNotEntered("Please check the Captcha box so I can make sure you are not a robot ;)");
+            setNotifyUserToEnterRecaptcha("recaptcha-container activate");
         })
     };
 
-    return <div className="contact-me-form-container">
+    return <>
         {formSubmitted ? <SubmittedFormView /> : 
-        <form ref={form} onSubmit={sendEmail}>
-            <h2 className="contact-header">Contact Me</h2>
-            <input type="text" name="user_name" ref={nameRef} placeholder="Your Name" className="contact-form-inputs" required/>
-            <input type="email" name="user_email" ref={emailRef} placeholder="Your Email" className="contact-form-inputs" required/>
-            <textarea name="message" placeholder="Type your message.." className="contact-form-inputs" required/>
-            {
-                captchaNotEntered.length > 0 ? <div className="captcha-error-message">{captchaNotEntered}</div> : <></>
-            }
-            <div className={notifyUserToEnterRecaptcha}>
-                <ReCAPTCHA onChange={() => {
-                    setCaptchaNotEntered("");
-                    setNotifyUserToEnterRecaptcha("recaptcha-container");
-                    }} theme="dark" sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY as string} />
-            </div>
-            <input type="submit" value="Send" className="contact-form-submit-btn"/>
-        </form>}
-    </div>
+        <div className="contact-me-form-container">
+            <form ref={form} onSubmit={sendEmail}>
+                <h2 className="contact-header">Contact Me</h2>
+                <input type="text" name="user_name" ref={nameRef} placeholder="Your Name" className="contact-form-inputs" required/>
+                <input type="email" name="user_email" ref={emailRef} placeholder="Your Email" className="contact-form-inputs" required/>
+                <textarea name="message" placeholder="Type your message.." className="contact-form-inputs" required/>
+                {
+                    captchaNotEntered.length > 0 ? <div className="captcha-error-message">{captchaNotEntered}</div> : <></>
+                }
+                <div className={notifyUserToEnterRecaptcha}>
+                    <ReCAPTCHA onChange={() => {
+                        setCaptchaNotEntered("");
+                        setNotifyUserToEnterRecaptcha("recaptcha-container");
+                        }} theme="dark" sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY as string} />
+                </div>
+                <input type="submit" value="Send" className="contact-form-submit-btn"/>
+            </form>
+        </div>
+        }
+    </>
 };
 
 export default ContactMeForm;

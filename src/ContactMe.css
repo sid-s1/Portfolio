@@ -1,7 +1,20 @@
+@keyframes custom-fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .contact-me-form-container {
     box-sizing: border-box;
     width: 50%;
     display: flex;
+    animation-name: custom-fadein;
+    animation-duration: 1s;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
@@ -13,7 +26,7 @@ form {
     width: 100%;
 }
 .contact-header {
-    padding: 20px;
+    padding: 15px;
     font-weight: lighter;
 }
 
@@ -53,6 +66,9 @@ textarea {
 }
 
 @media (max-width: 1050px) {
+    .contact-me-form-container {
+        font-size: 0.85rem;
+    }
     .contact-form-inputs,
     .contact-form-submit-btn {
         width: 250px;
@@ -63,7 +79,7 @@ textarea {
         height: 100px;
     }
     .contact-header {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
     .captcha-error-message {
         width: 100%;
@@ -86,7 +102,8 @@ textarea {
         font-size: 1.5rem;
     }
     .contact-header {
-        font-size: 1.5rem;
+        padding: 20px;
+        font-size: 1.2rem;
     }
     .captcha-error-message {
         width: 50%;

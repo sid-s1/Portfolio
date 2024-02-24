@@ -42,6 +42,16 @@ a {
   width: 80%;
 }
 
+@keyframes custom-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .main-block {
   display: flex;
   height: 80vh;
@@ -49,6 +59,8 @@ a {
   justify-content: center;
   align-items: center;
   min-height: 700px;
+  animation-name: custom-fadein;
+  animation-duration: 2s;
 }
 
 .accordions {
@@ -137,6 +149,16 @@ a {
   margin-left: 0;
 }
 
+/* @keyframes glow {
+  from {
+    text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue;
+  }
+
+  to {
+    text-shadow: 0 0 100px blue, 0 0 130px blue;
+  }
+} */
+
 .header-icons {
   cursor: url('../public/hand\ cursor\ 2.cur'), auto;
   text-decoration: underline;
@@ -144,6 +166,18 @@ a {
   transition: 250ms;
   -webkit-text-decoration-color: transparent;
   -moz-text-decoration-color: transparent;
+}
+
+.header-icons.selected {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px rgb(8 25 195),
+    0 0 21px rgb(8 25 195),
+    0 0 20px rgb(8 25 195),
+    0 0 20px rgb(8 25 195),
+    0 0 20px rgb(8 25 195),
+    0 0 20px rgb(8 25 195),
+    0 0 20px rgb(8 25 195);
 }
 
 @media (max-width: 600px) {
