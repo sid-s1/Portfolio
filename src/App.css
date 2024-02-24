@@ -28,6 +28,14 @@ a {
   width: 80%;
 }
 
+.landing-header {
+  z-index: 100;
+}
+
+.main-block,.homepage-intro {
+  z-index: 0;
+}
+
 @keyframes custom-fadein {
   0% {
     opacity: 0;
