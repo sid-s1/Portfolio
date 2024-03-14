@@ -131,7 +131,7 @@ const Homepage: React.FC<HomepageProps> = ({changeMainPage}) => {
                     <img src={profile} alt='profile-photo'className='profile-photo'/>
                     <ul className="contact-me" onClick={contactMeAction}><li>Contact Me</li></ul>
                     <div className="socials-links">
-                        <a href="https://github.com/sid-s1?tab=repositories" target="blank">
+                        <a href="https://github.com/sid-s1" target="blank">
                             <img src={github} alt="github-logo" className="link-icons github"/>
                         </a>
                         <a href="https://linkedin.com/in/s-iddharth-ingh1" target="blank">
