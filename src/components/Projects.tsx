@@ -68,8 +68,8 @@ const Projects: React.FC<ProjectsProps> = ({changeMainPage}) => {
             "tech": ["html", "css", "js"],
             "date": "June 2022",
             "type": "Personal",
-            "link": "https://sid-s1.github.io/Project-1/",
-            "github": "https://github.com/sid-s1/Project-1",
+            "link": "https://sid-s1.github.io/Sids-Wordle/",
+            "github": "https://github.com/sid-s1/Sids-Wordle",
             "tags": ["javascript","new york times"]
         },
         {
