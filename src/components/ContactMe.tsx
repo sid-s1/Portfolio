@@ -17,8 +17,8 @@ const ContactMeForm:React.FC = () => {
         if (form.current === null) return;
 
         emailjs
-        .sendForm('contact_service', 'contact_form', form.current,{
-            publicKey: "Lu6mHEFlS2mVjeU-W",
+        .sendForm('service_khno42h', 'template_2wgbbty', form.current,{
+            publicKey: "zsh-W0u8oNrdBEpDf",
         })
         .then(response => setFormSubmitted(true))
         .catch(error => {
